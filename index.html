@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f4f6f8; color: #333; text-align: center; direction: rtl; }
+        header { background: #1b4332; color: white; padding: 2rem 1rem; }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+        .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        .card h2 { color: #2d6a4f; margin-bottom: 15px; }
+        #counter-display { font-size: 3rem; font-weight: bold; color: #1b4332; margin: 15px 0; }
+        .btn { background-color: #2d6a4f; color: white; border: none; padding: 10px 25px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-family: 'Cairo', sans-serif; margin: 5px; }
+        .btn:hover { background-color: #1b4332; }
+        .btn-reset { background-color: #e63946; }
+        .duaa-list { list-style: none; text-align: right; line-height: 1.8; }
+        .duaa-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        footer { padding: 20px; background: #e9ecef; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>اللهم اجعل هذا العمل صدقة جارية</h1>
+        <p>عن روح الفقيد / الفقي</p>
+    </header>
+    <main class="container">
+        <section class="card">
+            <h2>عداد الأذكار</h2>
+            <div id="counter-display">0</div>
+            <button onclick="increaseCount()" class="btn">سبح الله</button>
+            <button onclick="resetCount()" class="btn btn-reset">إعادة ضبط</button>
+        </section>
+        <section class="card">
+            <h2>أدعية للمتوفى</h2>
+            <ul class="duaa-list">
+                <li>اللهم اغفر له وارحمه وعافه واعف عنه وأكرم نُزله ووسع مدخله.</li>
+                <li>اللهم أبدله داراً خيراً من داره وأهلاً خيراً من أهله.</li>
+                <li>اللهم اجعل قبره روضة من رياض الجنة ولا تجعله حفرة من حفر النار.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>لا تنسونا من صالح دعائكم</p>
+    </footer>
+    <script>
+        let count = 0;
+        function increaseCount() {
+            count++;
+            document.getElementById('counter-display').innerText = count;
+        }
+        function resetCount() {
+            count = 0;
+            document.getElementById('counter-display').innerText = count;
+        }
+    </script>
+</body>
+</html>

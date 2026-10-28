@@ -3,59 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدقة جارية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>صدقة جارية على روح المرحوم / سعد محمد سعد النجار</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Cairo', sans-serif; background-color: #f4f6f8; color: #333; text-align: center; direction: rtl; }
-        header { background: #1b4332; color: white; padding: 2rem 1rem; }
-        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
-        .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
-        .card h2 { color: #2d6a4f; margin-bottom: 15px; }
-        #counter-display { font-size: 3rem; font-weight: bold; color: #1b4332; margin: 15px 0; }
-        .btn { background-color: #2d6a4f; color: white; border: none; padding: 10px 25px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-family: 'Cairo', sans-serif; margin: 5px; }
-        .btn:hover { background-color: #1b4332; }
-        .btn-reset { background-color: #e63946; }
-        .duaa-list { list-style: none; text-align: right; line-height: 1.8; }
-        .duaa-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
-        footer { padding: 20px; background: #e9ecef; color: #6c757d; }
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', serif, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            color: white;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            opacity: 0.95;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #2d6a4f;
+        }
+        .card h2 {
+            color: #2d6a4f;
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .counter-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2d6a4f;
+            margin: 15px 0;
+        }
+        .btn {
+            background-color: #2d6a4f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .btn-reset {
+            background-color: #e63946;
+        }
+        .dua {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #34495e;
+        }
+        footer {
+            background-color: #1b4332;
+            color: white;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>اللهم اجعل هذا العمل صدقة جارية</h1>
-        <p>عن روح الفقيد / الفقي</p>
+        <p class="subtitle">عن روح المرحوم / سعد محمد سعد النجار</p>
     </header>
-    <main class="container">
-        <section class="card">
+
+    <div class="container">
+        <!-- قسم عداد الأذكار التفاعلي -->
+        <div class="card">
             <h2>عداد الأذكار</h2>
-            <div id="counter-display">0</div>
-            <button onclick="increaseCount()" class="btn">سبح الله</button>
-            <button onclick="resetCount()" class="btn btn-reset">إعادة ضبط</button>
-        </section>
-        <section class="card">
+            <p style="color: #666; margin-bottom: 5px;">اضغط للتسبيح ليكون أجوراً مستمرة للفقيد</p>
+            <div class="counter-number" id="counter">0</div>
+            <button class="btn" onclick="incrementCounter()">سبح لله</button>
+            <button class="btn btn-reset" onclick="resetCounter()">إعادة ضبط</button>
+        </div>
+
+        <!-- أدعية للمتوفى -->
+        <div class="card">
             <h2>أدعية للمتوفى</h2>
-            <ul class="duaa-list">
-                <li>اللهم اغفر له وارحمه وعافه واعف عنه وأكرم نُزله ووسع مدخله.</li>
-                <li>اللهم أبدله داراً خيراً من داره وأهلاً خيراً من أهله.</li>
-                <li>اللهم اجعل قبره روضة من رياض الجنة ولا تجعله حفرة من حفر النار.</li>
-            </ul>
-        </section>
-    </main>
+            <p class="dua">"اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس."</p>
+        </div>
+    </div>
+
     <footer>
-        <p>لا تنسونا من صالح دعائكم</p>
+        <p>الدعاء للميت أوفى وفاءً • اللهم اجعل هذا العمل نوراً لـ سعد محمد سعد النجار في قبره</p>
     </footer>
+
     <script>
         let count = 0;
-        function increaseCount() {
+        function incrementCounter() {
             count++;
-            document.getElementById('counter-display').innerText = count;
+            document.getElementById('counter').innerText = count;
         }
-        function resetCount() {
+        function resetCounter() {
             count = 0;
-            document.getElementById('counter-display').innerText = count;
+            document.getElementById('counter').innerText = count;
         }
     </script>
+
 </body>
 </html>
